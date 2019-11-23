@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+
+<title>Jelson &mdash; Portfolios</title>
+
+@*/**************CSS*************/*@
+
+<link href="@Url.Content("~/Content/variant-light.css")" rel="stylesheet" type="text/css" />
+
+<link href="@Url.Content("~/Content/background.css")" rel="stylesheet" type="text/css" />
+
+<link href="@Url.Content("~/Content/style.css")" rel="stylesheet" type="text/css" />
+  
+@*/**************Background Script*************/*@
+
+<script src="@Url.Content("~/js/background.js")" type="text/javascript"></script>
+   
+<script src="@Url.Content("~/js/Magnifier.js")" type="text/javascript"></script>
+
+<script src="@Url.Content("~/js/Event.js")" type="text/javascript"></script>
+
+<script src="@Url.Content("~/js/Gallery.js")" type="text/javascript"></script>
+
+
+
+<script type="text/javascript">
+    $(function () {
+        $('ul.menu').find('img').fadeTo('slow', 1);
+        $('ul.menu').find('img').hover(function () {
+            $(this).fadeTo('fast', 0.7);
+            $('body').css({ 'background-image': 'url(' + $(this).attr('src') + ')' });
+        }, function () {
+            $(this).fadeTo('slow', 1);
+        });
+    });
+
+</script>
+
+@Html.Partial("_AllScripts", false)
+
+
+</head>
+<body>
+<div id="header">
+	<div id="title">
+
+<h1><a href="../Home/index">Portfolio</a></h1>
+
+
+
+<span class="Translate" style="margin-top:-1px !important;">
+
+<span><div id="google_translate_element"></div><script>
+                                                   function googleTranslateElementInit() {
+                                                       new google.translate.TranslateElement({
+                                                           pageLanguage: 'en',
+                                                           layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+                                                       }, 'google_translate_element');
+                                                   }
+</script><script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></span>
+
+ </span>
+
+
+
+ <h1 class="slogan">Jelson. J</h1>
+ </div>
+</div>
+
+<div id="topmenu"><p>
+<strong class="hide">Main menu:</strong>
+
+@Html.ActionLink("Home", "Index", "Home")
+
+@Html.ActionLink("About Me", "About", "Home")
+
+@Html.ActionLink("My Portfolio", "portfolio", "Home")
+
+@Html.ActionLink("Services", "Services", "Service")
+
+@Html.ActionLink("Contact Me", "Create", "Contact")
+ 
+</p>
+
+</div>
+
+<div>
+@RenderBody()
+</div>
+
+<div id="footer">
+<p>Copyright 2012-2013 &copy; <a href="../Home/index">Jelson</a> | All Rights Reserved. @*<a href="http://entelope.com/">Jelson J</a>*@</p>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  
+<title>Jelson &mdash; Portfolios</title>
+
+ @*/**************Style Sheet CSS*************/*@
+ <link href="@Url.Content("~/Content/variant-light.css")" rel="stylesheet" type="text/css" />
+ <link href="@Url.Content("~/Content/colorbox.css")" rel="stylesheet" type="text/css" />
+@*/**************Scripts*************/*@
+<script src="@Url.Content("~/Scripts/jquery-1.5.1.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/modernizr-1.7.min.js")" type="text/javascript"></script>
+
+<script src="@Url.Content("~/Scripts/jquery.colorbox-min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/cufon.js")" type="text/javascript"></script>
+
+
+
+</head>
+<body>
+
+
+<script type="text/javascript">
+    Cufon.replace('h1,h2,h3,h4');
+    Cufon.replace('#menu #nav li');
+    $(function () {
+        $("a[rel='group1']").colorbox();
+    }
+        );
+        </script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $curtainopen = false;
+
+        $(".rope").click(function () {
+            $(this).blur();
+            if ($curtainopen == false) {
+                $(this).stop().animate({ top: '0px' }, { queue: false, duration: 350, easing: 'easeOutBounce' });
+                $(".leftcurtain").stop().animate({ width: '60px' }, 2000);
+                $(".rightcurtain").stop().animate({ width: '60px' }, 2000);
+                $curtainopen = true;
+            } else {
+                $(this).stop().animate({ top: '-40px' }, { queue: false, duration: 350, easing: 'easeOutBounce' });
+                $(".leftcurtain").stop().animate({ width: '50%' }, 2000);
+                $(".rightcurtain").stop().animate({ width: '51%' }, 2000);
+                $curtainopen = false;
+            }
+            return false;
+        });
+
+    });	
+	</script>
+	
+
+<div id="header">
+	<div id="title">
+
+<h1><a href="../Home/index">Portfolio</a></h1>
+
+<span class="Translate" style="margin-top:-1px !important;">
+
+<span><div id="google_translate_element"></div><script>
+                                                 function googleTranslateElementInit() {
+                                                     new google.translate.TranslateElement({
+                                                         pageLanguage: 'en',
+                                                         layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+                                                     }, 'google_translate_element');
+                                                 }
+</script><script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></span>
+
+ </span>
+ 
+ @Html.Partial("_AllScripts", false)
+
+<h1 class="slogan">Jelson. J</h1>
+	</div>
+</div>
+
+<div id="topmenu"><p>
+
+<strong class="hide">Main menu:</strong>
+
+@Html.ActionLink("Home", "Index", "Home")
+
+@Html.ActionLink("About Me", "About", "Home")
+
+@Html.ActionLink("My Portfolio", "portfolio", "Home")
+
+@Html.ActionLink("Services", "Services", "Service")
+
+@Html.ActionLink("Contact Me", "Create", "Contact")
+ </p>
+
+</div>
+
+
+<div>
+@RenderBody()
+</div>
+
+<div id="footer">
+<p>Copyright @DateTime.Now.Year &copy; <a href="../Home/index">Jelson</a> | All Rights Reserved. @*<a href="http://entelope.com/">Jelson J</a>*@</p>
+</div>
+
+
+
+</body><!-- InstanceEnd -->
+</html>

@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+
+
+
+
+<div id="wrap">		
+
+
+
+<img class="headerimage" src="@Url.Content("~/Content/images/bunner91.gif")" alt="" width="700" height="200"/>
+	
+<div id="content">
+
+<div class="post">
+			
+ <div class="postintro">Feb 17<br />2012</div>
+
+<h2>Please Leave Your Comments</h2> 
+
+<ul>
+<il class="AddLink ButtonLink">Add Your Comment</il>
+</ul>
+
+<div id="NoteListBlock"></div>
+
+
+
+<div id="NoteDialog" title="" class="Hidden"></div>
+
+<script type="text/javascript">
+
+    $(function () {
+        $("#NoteDialog").dialog({
+            autoOpen: false, width: 550, height: 500, modal: true,
+            buttons: {
+                "Save": function () {
+                    if ($("#NoteForm").validate().form()) {
+                        $.post("/Comments/Save",
+        $("#NoteForm").serialize(),
+        function (data) {
+            $("#NoteDialog").dialog("close");
+            $("#NoteListBlock").html(data);
+        });
+                    }
+                },
+                Cancel: function () { $(this).dialog("close"); }
+            }
+        });
+        $(".EditLink").live("click", function () {
+            var id = $(this).attr("noteid");
+            $("#NoteDialog").html("")
+                .dialog("option", "title", "Edit Note")
+                .load("/Comments/Edit/" + id, function () { $("#NoteDialog").dialog("open"); });
+        });
+        $(".AddLink").click(function () {
+            $("#NoteDialog").html("")
+                .dialog("option", "title", "Add Note")
+                .load("/Comments/Create", function () { $("#NoteDialog").dialog("open"); });
+        });
+        LoadList();
+    });
+    function LoadList() {
+        $("#NoteListBlock").load("/Comments/List");
+    }
+</script>
+
+
+       
+		</div>
+	</div>	
+
+
+</div>
+

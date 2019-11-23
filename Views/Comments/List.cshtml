@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Portfolios.Models.Note>
+
+
+
+<ul>
+    @foreach (var note in Model)
+    {
+    
+        <h4 class="TechnicalData"> @note.Title </h4>
+            @note.Body <br />
+        <span class="EditLink ButtonLink" noteid="@note.Id">Edit</span>
+    
+    }
+</ul>

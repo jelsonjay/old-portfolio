@@ -1,0 +1,148 @@
+﻿@{
+    ViewBag.Title = "Background";
+    Layout = "~/Views/Shared/_background.cshtml";
+}
+
+<div id="wrap">		
+	
+<h1 class="flayer">Role: Graphic Design</h1>
+
+<div id="content">
+<div class="post">
+
+          
+<h2>Backgrounds</h2>
+
+@*<img src="@Url.Content("~/Content/photo/7.png")" alt="" height="615" width="500" />
+
+*@
+
+<div class="wrapper">
+  
+    <div class="gallery">
+        <div class="slider">
+            <ul id="gallery"></ul>
+        </div>
+        <div class="magnifier-preview" id="gallery-preview">
+            <span class="heading">Description:</span>
+            <div class="title" id="gallery-preview-title">&nbsp;</div>
+            <span class="heading">Skills used:</span>
+            <span>Illustrator, Photoshop</span>
+        </div>
+        
+        
+        <div class="btn-wrapper">
+            <button class="prev" id="gallery-prev">&lt;</button>
+            <button class="next" id="gallery-next">&gt;</button>
+        </div>
+    </div>
+
+<script type="text/javascript">
+    var evt = new Event(),
+    m = new Magnifier(evt, {
+        largeWrapper: document.getElementById('gallery-preview')
+    }),
+    imageData = [
+        {
+            title: 'This Background was designed during the time I was taken the Illustrator, Photoshop and Firework course at Leeds City College of Technology ',
+            thumb: '../../Content/thumb/7.png',
+            large: '../../Content/large/7.png',
+            url: '#'
+        },
+        {
+            title: 'This Background was designed during the time I was taken the Illustrator, Photoshop and Firework course at Leeds City College of Technology',
+            thumb: '../../Content/thumb/10.png',
+            large: '../../Content/large/10.png',
+            url: ''
+        },
+        {
+            title: 'This Background was designed during the time I was taken the Illustrator, Photoshop and Firework course at Leeds City College of Technology',
+            thumb: '../../Content/thumb/3.png',
+            large: '../../Content/large/3.png',
+            url: ''
+        },
+        {
+            title: 'This Background was designed during the time I was taken the Illustrator, Photoshop and Firework course at Leeds City College of Technology',
+            thumb: '../../Content/thumb/2.jpg',
+            large: '../../Content/large/2.jpg',
+            url: ''
+        },
+        {
+            title: 'This Background was designed during the time I was taken the Illustrator, Photoshop and Firework course at Leeds City College of Technology',
+            thumb: '../../Content/thumb/7.png',
+            large: '../../Content/large/7.png',
+            url: '#'
+        },
+        {
+            title: 'This Background was designed during the time I was taken the Illustrator, Photoshop and Firework course at Leeds City College of Technology',
+            thumb: '../../Content/thumb/3.png',
+            large: '../../Content/large/3.png',
+            url: '#'
+        },
+
+    ],
+
+
+    gallery = new Gallery(evt, m, {
+        gallery: document.getElementById('gallery'),
+        images: imageData,
+        prev: document.getElementById('gallery-prev'),
+        next: document.getElementById('gallery-next'),
+        previewText: document.getElementById('gallery-preview-title')
+    });
+    
+
+</script>
+
+
+
+@*<div id="sidebar1">
+
+<strong></strong>
+<span>This Background was designed during the time I was taken the
+Illustrator, Photoshop and Firework course at Leeds City College of Technology.</span>
+<br /><br />
+            
+<strong>Skills used:</strong>
+
+<br /><br />
+
+<h2>Share this:</h2>
+
+<span>Tel:00447840398213</span>
+<br />
+<span>jelson20@outlook.com</span>*@
+ 
+</div>
+
+<br /><br />
+
+<h2>Similar work.</h2>
+
+
+<div class="text"><a href="#"><span class="small"></span> <span class="title">Use the mouse to change background live</span></a></div>
+<br /><br />
+    
+    <div id="test">
+
+		<ul class="menu">
+            <li><img src="@Url.Content("~/Content/photo/bg.jpg")" alt="" height="90" width="110"/></li>
+			<li><img src="@Url.Content("~/Content/photo/7.png")" alt="" height="90" width="110"/></li>
+			<li><img src="@Url.Content("~/Content/photo/10.png")" alt="" height="90" width="110"/></li>
+			<li><img src="@Url.Content("~/Content/photo/6.png")" alt="" height="90" width="110"/></li>
+			<li><img src="@Url.Content("~/Content/photo/7.png")" alt="" height="90" width="110"/></li>
+			<li><img src="@Url.Content("~/Content/photo/10.png")" alt="" height="90" width="110"/></li>
+		</ul>
+	</div>
+
+
+
+
+
+<p id="back-top">
+<a href="#top"><span></span>Back to Top</a>
+</p>
+
+</div>
+</div>	
+</div>

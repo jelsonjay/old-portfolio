@@ -1,0 +1,24 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "Error";
+}
+
+<div id="wrap">		
+
+
+
+<div id="content">
+		<div class="post">
+			
+			<h2>Thank You</h2>
+			<p>Your message has been received. I'll get back to you as soon as I can</p>
+			<p> @Html.ActionLink("Click here to go to home page", "Index", "Home")</p>
+		</div>
+	</div>	
+
+
+<img src="@Url.Content("~/Content/images/hello.png")" alt="" width="700" height="700"/>	
+
+
+</div>

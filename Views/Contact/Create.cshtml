@@ -1,0 +1,154 @@
+﻿@model Portfolios.Models.Contact
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+<div id="wrap">	
+	
+<div id="sidebar">
+
+		
+<h2>Contact</h2>
+
+<br />
+
+<iframe width="290" height="410" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.uk/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Leeds&amp;aq=0&amp;oq=leed&amp;sll=53.741446,-1.686054&amp;sspn=0.713927,2.113495&amp;ie=UTF8&amp;hq=&amp;hnear=Leeds,+West+Yorkshire,+United+Kingdom&amp;ll=53.801279,-1.548567&amp;spn=0.178228,0.528374&amp;t=m&amp;z=12&amp;output=embed"></iframe><br />
+<span><small><a href="https://maps.google.co.uk/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Leeds&amp;aq=0&amp;oq=leed&amp;sll=53.741446,-1.686054&amp;sspn=0.713927,2.113495&amp;ie=UTF8&amp;hq=&amp;hnear=Leeds,+West+Yorkshire,+United+Kingdom&amp;ll=53.801279,-1.548567&amp;spn=0.178228,0.528374&amp;t=m&amp;z=12" style="color:#0000FF;text-align:left">ViewLargerMap</a></small></span>
+
+<br /><br />
+
+<span><img src="@Url.Content("~/Content/images/phone.png")" alt="Office Number" />Tel:00447840398213</span>
+
+<span><img src="@Url.Content("~/Content/images/email.png")" alt="" /> jelson20@outlook.com</span>
+<br /><br />
+<h2>Connect</h2>
+
+<a href="https://www.facebook.com/jelsonj"><img src="@Url.Content("~/Content/images/facebook_32.png")" alt="facebook" /></a>
+<br /><br />
+<h2>Browsers</h2>    
+<img src="@Url.Content("~/Content/images/browser.png")" alt="" width="260" height="200"/>     
+ 
+</div>
+
+
+<img class="headerimage" src="@Url.Content("~/Content/images/bunner92.gif")" alt="" width="700" height="200"/>	
+
+<div id="content">
+		<div class="post">
+			
+		<h2>Lets Get In Touch!</h2>
+        
+        <p>If you wish to get in touch, regarding freelance opportunities 
+        or even if you just want to say hi, simply fill out the contact 
+        form below I'll get back to you shortly.</p>
+        
+        
+
+        	
+            
+         @using (Html.BeginForm())
+         {
+    @Html.ValidationSummary(true)
+   <fieldset>
+        
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)<sub class="test0">&nbsp;*</sub>
+        </div>
+        <div class="editor-field">
+            @Html.TextArea("Name", new { cols = 50, rows = 1 })
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)<sub class="test0">&nbsp;*</sub>
+        </div>
+        <div class="editor-field">
+            @Html.TextArea("Email", new { cols = 50, rows = 1 })
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Message)<sub class="test0">&nbsp;*</sub>
+        </div>
+        <div class="editor-field">
+            @Html.TextArea("Message", new { cols = 50, rows = 14 })
+            @Html.ValidationMessageFor(model => model.Message)
+        </div>
+
+        <p>
+            <input type="submit" value="Submit Message" />
+        </p>
+     </fieldset>
+}
+
+@*<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>*@
+
+
+<ul>
+<il class="AddLink ButtonLink">Add Your Comment</il>
+</ul>
+
+<div id="NoteListBlock"></div>
+
+
+
+<div id="NoteDialog" title="" class="Hidden"></div>
+
+<script type="text/javascript">
+
+    $(function () {
+        $("#NoteDialog").dialog({
+            autoOpen: false, width: 550, height: 500, modal: true,
+            buttons: {
+                "Save": function () {
+                    if ($("#NoteForm").validate().form()) {
+                        $.post("/Comments/Save",
+        $("#NoteForm").serialize(),
+        function (data) {
+            $("#NoteDialog").dialog("close");
+            $("#NoteListBlock").html(data);
+        });
+                    }
+                },
+                Cancel: function () { $(this).dialog("close"); }
+            }
+        });
+        $(".EditLink").live("click", function () {
+            var id = $(this).attr("noteid");
+            $("#NoteDialog").html("")
+                .dialog("option", "title", "Edit Note")
+                .load("/Comments/Edit/" + id, function () { $("#NoteDialog").dialog("open"); });
+        });
+        $(".AddLink").click(function () {
+            $("#NoteDialog").html("")
+                .dialog("option", "title", "Add Note")
+                .load("/Comments/Create", function () { $("#NoteDialog").dialog("open"); });
+        });
+        LoadList();
+    });
+    function LoadList() {
+        $("#NoteListBlock").load("/Comments/List");
+    }
+</script>
+
+
+ <p id="back-top">
+<a href="#top"><span></span>Back to Top</a>
+</p>
+    
+        
+ </div>
+ </div>	
+</div>
+
+
+
+
+

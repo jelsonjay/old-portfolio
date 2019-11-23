@@ -1,0 +1,25 @@
+﻿@model Portfolios.Models.Note
+           
+@using (Html.BeginForm("Save", "Comments", FormMethod.Post, new { id = "NoteForm" }))
+
+{
+@Html.Hidden("Id")
+<label class="Title">
+    <span>Title</span><br />
+    @Html.TextBox("Title")<br />
+</label>
+<label class="Body">
+    <span>Body</span><br />
+    @Html.TextArea("Body")
+</label>
+}
+    <script type="text/javascript">
+        $(function () {
+            $("#NoteForm").validate({
+                rules: {
+                    Title: { required: true },
+                    Body: { required: true }
+                }
+            });
+        });
+    </script>

@@ -1,0 +1,360 @@
+.section{
+	width: 400px;
+	height: 420px;
+	margin: 0px auto;
+	position: relative;
+}
+/* Message to show when border-radius is not supported */
+.message{
+	display: none;
+	text-align: center;
+	font-weight: bold;
+	color: #000;
+	font-size: 20px;
+	font-style: italic;
+	padding-bottom: 20px;
+}
+.no-borderradius .message{
+	display: block;
+}
+/* Box with dashed border to show the bounding box of the circle */
+.normal-trigger-area{
+	width: 300px;
+    height: 420px;
+	position: absolute;
+    left: 0px;
+    top: 0px;
+	border: 1px dashed #916d57;
+	background: rgba(179,143,121,0.1);
+	-webkit-box-shadow: 0 0 0 1px rgba(255,255,255,0.5);
+	-moz-box-shadow: 0 0 0 1px rgba(255,255,255,0.5);
+	box-shadow: 0 0 0 1px rgba(255,255,255,0.5);
+}
+/* The circle */
+.ec-circle{
+    width: 300px;
+    height: 420px;
+	-webkit-border-radius: 210px;
+	-moz-border-radius: 210px;
+	border-radius: 50%;
+	text-align: center;
+    overflow: hidden;
+	font-family:'Kelly Slab', Georgia, serif;
+    background: #dda994 url(images/2.jpg) no-repeat center center;
+	-webkit-box-shadow: 
+        inset 0 0 1px 230px rgba(0,0,0,0.6),
+		inset 0 0 0 7px #d5ad94;
+	-moz-box-shadow: 
+        inset 0 0 1px 230px rgba(0,0,0,0.6),
+		inset 0 0 0 7px #d5ad94;
+	box-shadow: 
+        inset 0 0 1px 230px rgba(0,0,0,0.6),
+		inset 0 0 0 7px #d5ad94;
+	-webkit-transition: box-shadow 400ms ease-in-out;
+	-moz-transition: box-shadow 400ms ease-in-out;
+	-o-transition: box-shadow 400ms ease-in-out;
+	-ms-transition: box-shadow 400ms ease-in-out;
+	transition: box-shadow 400ms ease-in-out;
+	/*For IE < 9 so that we have some kind of effect */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	display: block;
+	outline: none;
+}
+.ec-circle-hover{
+	-webkit-box-shadow: 
+		inset 0 0 0 0 rgba(0,0,0,0.6),
+		inset 0 0 0 20px #c18167,
+		0 0 10px rgba(0,0,0,0.3);
+	-moz-box-shadow: 
+		inset 0 0 0 0 rgba(0,0,0,0.6),
+		inset 0 0 0 20px #c18167,
+		0 0 10px rgba(0,0,0,0.3);
+    box-shadow: 
+		inset 0 0 0 0 rgba(0,0,0,0.6),
+		inset 0 0 0 20px #c18167,
+		0 0 10px rgba(0,0,0,0.3);
+	/*For IE < 9 so that we have some kind of effect */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+/* Text inside of circle */
+.ec-circle h3{
+	color: transparent;
+    font-size: 66px;
+	line-height: 420px;
+    text-shadow: 0px 0px 100px #fff;
+	text-transform: uppercase;
+    -webkit-transition: text-shadow 400ms ease-in-out;
+	-moz-transition: text-shadow 400ms ease-in-out;
+	-o-transition: text-shadow 400ms ease-in-out;
+	-ms-transition: text-shadow 400ms ease-in-out;
+	transition: text-shadow 400ms ease-in-out;
+}
+.ec-circle-hover h3{
+	text-shadow: 0px 0px 1px #fff;
+}
+
+
+
+
+
+
+
+/*********************** PICBOX ***********************/
+#pbOverlay, #pbImage, #pbBottom, #pbCloseBtn {
+	position: fixed;
+	z-index: 9999;
+}
+
+#pbOverlay {
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+    background: #000;
+	cursor: pointer;
+}
+
+#pbCloseBtn {
+	top: 0;
+	right: 0;
+	display: block;
+	width: 50px;
+	height: 50px;
+	background: url(closebutton.png) no-repeat top left;
+}
+
+.pbLoading {
+	background: #000 url(loading.gif) no-repeat center !important;
+}
+
+#pbImage {
+	border: none;
+	background: #000 no-repeat;
+	-moz-box-shadow: 0 0 40px #000;
+	-webkit-box-shadow: 0 0 40px #000;
+	box-shadow: 0 0 40px #000;
+	cursor: move;
+}
+
+#pbBottom {
+	font-family: Verdana, Arial, Geneva, Helvetica, sans-serif;
+	font-size: 10px;
+	text-align: center;
+	color: #EEE;
+	line-height: 1.4em;
+	left: 50%;
+	bottom: 10px;
+	width: 400px;
+	margin-left: -200px; /* half the width */ 
+}
+
+#pbCaption {
+	font-weight: bold;
+	padding: 4px;
+	display: inline-block;
+	*display: inline; /* IE 7 */
+	background-color: rgba(0,0,0,0.7);
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#B0000000, EndColorStr=#B0000000);
+	zoom: 1;
+}
+
+#pbNav {
+	display: block;
+	width: 200px;
+	margin: auto;
+	margin-top: 5px;
+}
+
+#pbPrevBtn, #pbNextBtn, #pbZoomBtn  {
+	display: inline-block;
+	width: 70px;
+	height: 65px;
+	outline: none;
+	text-indent: -9000px;
+	background: url(navbtns.png) no-repeat;
+}
+
+#pbPrevBtn {
+	background-position: -70px 0;
+	float: left;
+}
+
+#pbPrevBtn.pbgreyed {
+	background-position: 0 0;
+}
+
+#pbNextBtn {
+	background-position: -320px 0;
+	float: right;
+}
+
+#pbNextBtn.pbgreyed {
+	background-position: -390px;
+}
+
+#pbZoomBtn {
+	width: 60px;
+	background-position: -140px 0;
+	float: left;
+}
+
+#pbZoomBtn.pbgreyed { 
+	background-position: -200px 0;
+}
+
+#pbZoomBtn.pbzoomed {
+	background-position: -260px 0;
+}
+
+/* END PICBOX */
+
+
+
+
+/*************************** Start Hover Effect***********************/
+.container{
+	
+	width:800px;	height:300px;
+	margin: 20px auto;
+	z-index:-1;
+}
+.homeBox {
+	position: relative;
+	float: left;
+	display: block;
+}
+
+.homeBox .one_fourth {
+	text-align: center;
+	overflow: hidden;
+	background-image: linear-gradient(bottom, #F3F3F3 100%, #FAFAFA 0%);
+	background-image: -o-linear-gradient(bottom, #F3F3F3 100%, #FAFAFA 0%);
+	background-image: -moz-linear-gradient(bottom, #F3F3F3 100%, #FAFAFA 0%);
+	background-image: -webkit-linear-gradient(bottom, #F3F3F3 100%, #FAFAFA 0%);
+	background-image: -ms-linear-gradient(bottom, #F3F3F3 100%, #FAFAFA 0%);
+	background-image: -webkit-gradient( linear, left bottom, left top, color-stop(1, #F3F3F3), color-stop(0, #FAFAFA) );
+	border: 3px solid #a74646;
+	-moz-box-shadow: 0px 1px 0px #ecebeb;
+	-webkit-box-shadow: 0px 1px 0px #ecebeb;
+	height: 228px;
+	width: 228px;
+	margin-right: 5px;	
+	-webkit-transition: background 0.5s linear;
+	-moz-transition: background 0.5s linear;
+	-o-transition: background 0.5s linear;
+	transition: background 0.5s linear;
+}
+
+.one_half, .one_third, .two_thirds, .one_fourth, .three_fourths, .one_fifth, .two_fifth, .three_fifths, .four_fifths {
+	position: relative;
+	margin: 0;
+	margin-right: 3.8%;
+	float: left;
+}
+.homeBox .one_fourth div, .homeBox .last div {
+	padding: 10px;
+}
+
+.homeBox .one_fourth:hover{
+	background:#a74646;
+}
+
+.homeBox .one_fourth .boxImage {
+	-webkit-transition: all 0.2s linear;
+	-moz-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+}
+
+.homeBox .one_fourth:hover .boxImage {
+	position: relative;
+	-webkit-animation: moveFromTop 350ms ease;
+	-moz-animation: moveFromTop 350ms ease;
+	-ms-animation: moveFromTop 350ms ease;
+}
+
+.homeBox .one_fourth h2 {
+	color: #a74646;
+	margin: 0 0 10px 0;
+	-webkit-transition: all 0.2s linear;
+	-moz-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+}
+
+.homeBox .one_fourth:hover h2 {
+	position: relative;
+	color:#EAEAEA;
+	-webkit-animation: moveFromTop 200ms ease;
+	-moz-animation: moveFromTop 200ms ease;
+	-ms-animation: moveFromTop 200ms ease;
+}
+
+
+.homeBox .one_fourth .boxDescription {
+	color: #4B4A4A;
+	margin: 0 0 10px 0;
+	-webkit-transition: all 0.2s linear;
+	-moz-transition: all 0.2s linear;
+	-o-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+}
+
+.homeBox .one_fourth:hover .boxDescription {
+	position: relative;
+	color:#EAEAEA;
+	-webkit-animation: moveFromBottom 500ms ease-in-out;
+	-moz-animation: moveFromBottom 500ms ease-in-out;
+	-ms-animation: moveFromBottom 500ms ease-in-out;
+}
+
+
+@-webkit-keyframes moveFromTop {
+    from {
+        top: -600px;
+    }
+    to {
+      	top: auto;
+    }
+}
+@-moz-keyframes moveFromTop {
+    from {
+        -moz-transform: translateY(-600%);
+    }
+    to {
+        -moz-transform: translateY(0%);
+    }
+}
+@-ms-keyframes moveFromTop {
+    from {
+        -ms-transform: translateY(-600%);
+    }
+    to {
+        -ms-transform: translateY(0%);
+    }
+}
+
+@-webkit-keyframes moveFromBottom {
+    from {
+        bottom: -400px;
+    }
+    to {
+       	top: auto;
+    }
+}
+@-moz-keyframes moveFromBottom {
+    from {
+        -moz-transform: translateY(400%);
+    }
+    to {
+        -moz-transform: translateY(0%);
+    }
+}
+@-ms-keyframes moveFromBottom {
+    from {
+        -ms-transform: translateY(400%);
+    }
+    to {
+        -ms-transform: translateY(0%);
+    }
+}

@@ -1,0 +1,533 @@
+/*
+by Jelson.
+For more information, see about me http://entelope.com/Portifolio/
+*/
+
+/*********************************************** Main containers ********************************/
+body 
+{
+padding:0; 
+margin:0; 
+
+    background: url('photo/bg.jpg') no-repeat center center fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+color:black; text-align:center; line-height:1.5em;
+}
+
+#wrap 
+{
+width:980px; 
+text-align:left; 
+margin:0 auto; 
+padding:20px 0 0 0;
+}
+
+/************************************************** Header ******************************************/
+#header 
+{
+width:100%; 
+margin:0; 
+background-color:#CABAA1; 
+border-top:1px solid #dadada; 
+border-bottom:1px solid #dadada;
+}
+
+#title 
+{
+width:980px; 
+padding:20px 0; 
+margin:0 auto; 
+text-align:left;
+font-style: italic;
+}
+
+h1 a 
+{
+color:#a74646; 
+font-weight:400; 
+text-decoration:none; 
+border:0;
+font-size:3.2em;
+}
+
+h1 a:hover 
+{
+color:#777; 
+text-decoration:none; 
+border:0;
+}
+
+
+.slogan 
+{
+color:black; 
+font-size:1.4em; 
+margin:0; 
+padding:0;
+}
+
+/************************************************** Top menu ***************************/
+#topmenu 
+{
+text-align:center; 
+margin:0; width:100%; 
+background-color:#f0f0f0; 
+border-bottom:1px solid #dadada;
+font-style: italic;
+}
+
+#topmenu p 
+{
+width:980px; 
+text-align:center; 
+font-size:1.2em; 
+line-height:2.2em; 
+color:#777; 
+margin:0 auto; 
+overflow:hidden;
+}
+
+#topmenu a {padding:12px 8px 9px 8px; font-weight:400; margin:0 20px 0 0; color:#555; border:0;}
+
+#topmenu a.active:hover {color:#444; padding:12px 8px 9px 8px;}
+
+#topmenu a:hover {color:#444; background-color:#2DA8F8; text-decoration:none; text-shadow:#ccc 1px 1px 3px;}
+
+#topmenu a.active {color:#444; background-color:#dadada; text-shadow:#ccc 1px 1px 3px;}
+
+
+/******************************************* HTML Tags ***************************************/
+a {text-decoration:none; font-weight:400; color:#467aa7; }
+a:hover {text-decoration:none; }
+a img {border:0;}
+h2 {margin:0 0 18px 0; padding:0 0 7px; color:#a74646; font-size:1.9em; font-weight:400; border-bottom:1px solid #dadada;}
+h2 a {font-weight:400;}
+h3 {font-size:1.5em; font-weight:400; margin:0 0 10px 0; padding:2px 0; color:#a74646; font-size:1.2em; font-weight:400; border-bottom:1px solid #dadada;}
+p {margin:0 0 18px 0;}
+ul {margin:0 0 18px 20px; padding:0;}
+li {margin:0; padding:0 0 0 5px;}
+
+.flayer 
+{
+color:#a74646;
+}
+
+.link a
+{
+color:#a74646;
+}
+
+/****************************************** Sidebars **************************************/
+
+#sidebar {width:50px; float:right; margin:0; padding:0; color:black; font-style: italic;}
+
+#sidebar  h2 {font-style: italic; padding-bottom:3px; border-bottom:0px solid; margin-bottom:5px;}
+
+#sidebar ul {list-style:none; margin:0 0 15px 0; font-style: italic;}
+
+#sidebar ul ul{list-style:none; margin:0 0 0 15px; font-size:0.9em;}
+
+#sidebar li {padding:0; margin:0;}
+
+#sidebar ul.sidemenu{width:220px; padding:0; margin:0 0 20px 0; border-top:1px solid #dadada;}
+
+#sidebar ul.sidemenu li a {color:#777; display:block; padding:5px 0 4px; margin:0; font-size:1.3em;}
+
+#sidebar ul.sidemenu li a:hover {color:#a74646; text-decoration:none; border-bottom:1px solid #dadada;}
+
+#sidebar ul.sidemenu li a.active{color:#467aa7;}
+
+#sidebar ul.sidemenu ul {width:200px; padding:0; margin:0 0 0 20px; border-top:0;}
+
+#sidebar ul.sidemenu ul li a {padding:2px 0; margin:0; font-size:1.1em;}
+
+
+/****************************************** Sidebars1 **************************************/
+
+#sidebar1 {width:320px; float:right; margin:0; padding:0; color:black; font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;}
+
+#sidebar1  span { padding-bottom:3px; border-bottom:0px solid; margin-bottom:5px;}
+
+#sidebar1 ul {list-style:none; margin:0 0 15px 0; }
+
+#sidebar1 ul ul{list-style:none; margin:0 0 0 15px; font-size:0.9em;}
+
+#sidebar1 li {padding:0; margin:0;}
+
+#sidebar1 ul.sidemenu{width:220px; padding:0; margin:0 0 20px 0; border-top:1px solid #dadada;}
+
+#sidebar1 ul.sidemenu li a {color:#777; display:block; padding:5px 0 4px; margin:0; font-size:1.3em;}
+
+#sidebar1 ul.sidemenu li a:hover {color:#a74646; text-decoration:none; border-bottom:1px solid #dadada;}
+
+#sidebar1 ul.sidemenu li a.active{color:#467aa7;}
+
+#sidebar1 ul.sidemenu ul {width:200px; padding:0; margin:0 0 0 20px; border-top:0;}
+
+#sidebar1 ul.sidemenu ul li a {padding:2px 0; margin:0; font-size:1.1em;}
+
+
+/******************************************** Content area ******************************/
+
+#content {text-align:left; padding:0; margin:0 0 15px 0; width:730px; font-size:1.2em; font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;}
+
+#content img {margin:5px 0;}
+
+#feature {margin:0 0 20px 0;}
+
+.post {margin:0 0 20px 0; padding:15px 20px 0 20px; width:880px; line-height:1.7em; border:1px solid #dadada; background-color:#fff;}
+
+.postintro {width:70px; padding:4px; background-color:#f4f4f4; text-align:center; color:#777; font-size:1.1em; float:right; border:8px solid #dadada; margin:0 15px 10px 15px;}
+
+.postmeta {text-align:right; color:#666; padding:10px 0 0; border-top: 1px dotted #dadada; font-style: italic;}
+
+.intro {background-color:#a74646; width:70px; height:100px; float:left; border:8px solid #f4f4f4; }
+
+
+/***************************************************** Footer ************************************/
+
+#footer{clear:both; width:100%; background-color:#f8f8f8; font-size:0.9em; line-height:1.8em; color:blue; font-style: italic; margin:20px 0; border-bottom:1px solid #dadada; border-top:1px solid #dadada;}
+#footer p {width:980px; margin:10px auto; text-align:center;}
+#footer a {color:blue; font-weight:400; text-decoration:none; border-bottom:none;}
+
+
+/************************************************* Various classes ******************************/
+
+.headerimage1 {width:519px; height:465px; overflow:hidden;border:1px solid #dadada; margin-bottom:20px;}
+.headerimage {width:918px; height:175px; overflow:hidden;border:1px solid #dadada; margin-bottom:20px;}
+.centered {text-align:center;}
+.hide {display:none;}
+.clear {clear:both; visibility:hidden;}
+
+/***************************************************NEW CSS***************************************/
+
+#navlist li {
+
+	background: url(images/arb.gif) no-repeat left top;
+	background-repeat: no-repeat;
+    background-position:.1em; 
+    list-style: none;
+	padding:5px 15px;
+
+}
+
+#navlist1 li {
+
+	background: url(images/arb.gif) no-repeat left top;
+	background-repeat: no-repeat;
+    background-position:.1em; 
+    list-style: none;
+	padding:5px 15px;
+
+}
+
+.navlist li {
+
+	background: url(images/arb.gif) no-repeat left top;
+	background-repeat: no-repeat;
+    background-position:.1em; 
+    list-style: none;
+	padding:5px 15px;
+
+}
+
+  fieldset {
+  width:675px;
+  margin:0 0 10px 0;
+  padding: 5px;
+  border: 3px solid #A52A2A; 
+  } 
+
+
+/************************************* Form Formatting for table based form **************************/ 
+  form { 
+ background-color:gray; 
+  margin:0; 
+  padding:0; 
+color:white;
+  }
+  
+.test0
+{
+color: red;
+}
+
+.editor-field
+{
+color: red;
+}
+
+.Translate
+{
+float:right;  
+position: relative; 
+}
+
+.TechnicalData
+{
+background-color: #EFF2F5;
+padding: 10px 10px;
+font-style: italic;
+font-size:100%; 
+}
+
+
+.ButtonLink ul{
+margin: 0;
+padding: 0;
+float: left;
+font-style: italic;
+
+width: 100%;
+border: 1px solid #625e00;
+border-width: 1px 0;
+background: black url(images/blockdefault.gif) center center repeat-x;
+}
+
+
+.ButtonLink { color:Blue; cursor:pointer; }
+.ButtonLink:hover { text-decoration:underline; }
+.Hidden { display:none; }
+#NoteForm label { display:block; margin-bottom:6px; }
+#NoteForm label > span { font-weight:bold; }
+#NoteForm input[type=text] { width:450px; }
+#NoteForm textarea { width:450px; height:260px; }
+
+
+
+/************************************Back to top button***************************/
+/* 
+#back-top {
+float: left;
+margin-right: -10px;
+}
+*/
+    
+/*Back to top button*/
+#back-top {
+position: fixed;
+bottom: 30px;
+margin-left: -150px;
+}
+
+#back-top a {
+width: 65px;
+display: block;
+text-align: center;
+font: 11px/10% Arial, Helvetica, sans-serif;
+text-transform: none;
+background-attachment: fixed;
+text-decoration: none;
+font-weight: bold;
+color: black;
+/* background color transition */
+-webkit-transition: 1s;
+-moz-transition: 1s;
+
+}
+#back-top a:hover {
+color: #000;
+}
+/* arrow icon (span tag) */
+#back-top span {
+width: 65px;
+height: 65px;
+display: block;
+margin-bottom: 7px;
+background-attachment: fixed;
+background: #EE3C32 url(images/up-arrow.png) no-repeat center center;
+/* rounded corners */
+border-radius: 15px;
+-webkit-border-radius: 15px;
+-moz-border-radius: 15px;
+
+/* background color transition */
+-webkit-transition: 1s;
+-moz-transition: 1s;
+
+}
+#back-top a:hover span {
+background-color: #777;
+}
+
+/************************************Photo Portfolio***************************/
+ul#portfolio li { margin-right: 5px; }
+
+
+/*****Custom Classes*****/
+.clearing { clear: both; }
+.last { margin-bottom: 0; }
+.screenReader { left: -9999px; position: absolute; top: -9999px; }
+
+
+
+/*****Basic Layout*****/
+div#container { margin: 20px auto 0; overflow: hidden; width: 672px; }
+
+ul#filter { float: left; font-size: 16px; list-style: none; margin-left: 0; width: 100%; }
+ul#filter li { 
+	border-right: 3px solid #a74646;
+	float: left;
+	line-height: 16px;
+	margin-right: 10px;
+	padding-right: 10px;
+}
+
+
+ul#filter li:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+ul#filter a { color: #a74646; font-weight: bold; text-decoration: none; }
+ul#filter li.current a, ul#filter a:hover { text-decoration: underline; }
+ul#filter li.current a { color: #333; font-weight: bold; }
+
+
+ul#portfolio { float: left; list-style: none; margin-left: 0; width: 672px; }
+ul#portfolio li { 
+	border: 1px solid #dedede; 
+	float: left; 
+	margin: 880 10px 10px 0; 
+	padding: 5px;
+	width: 202px;
+}
+ul#portfolio a { display: block; width: 100%; }
+ul#portfolio a:hover { text-decoration: none; }
+ul#portfolio img { border: 1px solid #dedede; display: block; padding-bottom: 5px; }
+
+
+ul#portfolio a {
+font-weight: bold;
+color:#a74646;
+text-align: center;
+}
+
+
+
+@import url("reset.css");
+
+/************************************layout***********************************/
+
+/*
+#content {
+position:absolute;
+top:50%;
+left:50%;
+margin:-340px 0 0 -450px;
+width:900px;
+height:600px;
+}
+*/
+
+.legend {
+float:left;
+width:250px;
+margin-top:140px;
+}
+
+#content h1 {
+font-family:'Cabin Sketch', arial, serif;
+text-shadow:3px 3px 0 #ddd;
+color:#193340;
+font-size:40px;
+margin-bottom:40px;
+text-align:right;
+}
+
+#skills {
+float:left;
+clear:both;
+width:100%;
+}
+
+.skills span,
+.skills span {
+display:block;
+list-style:none;
+margin:0;
+padding:0;
+}
+
+.skills span {
+float:left;
+clear:both;
+padding:0 15px;
+height:35px;
+line-height:35px;
+color:#fff;
+margin-bottom:1px;
+font-size:18px;
+}
+
+.skills .jq {
+background:#97BE0D;
+}
+
+.skills .css {
+background:#D84F5F;
+}
+
+.skills .html {
+background:#88B8E6;
+}
+
+.skills .c {
+background:#9932CC;
+}
+
+.skills .sql {
+background:#00FFFF;
+}
+
+.skills .asp {
+background:#000000;
+}
+
+.skills .mvc {
+background:#FF00FF;
+}
+
+.get {
+display:none;
+}
+
+
+/*
+#diagram {
+float:right;
+width:600px;
+height:600px;
+}
+*/
+
+/* ------ anchors
+-----------------------------------------------*/
+
+a {
+text-decoration:none;
+color:#333;
+}
+
+/************************************Pen Letter***********************************/
+
+#inkwell1 {
+    bottom: 100px;
+    left: 140px;
+    position: fixed;
+}
+#inkwell2 {
+    bottom: 100px;
+    left: 140px;
+    position: fixed;
+    visibility: hidden;
+}
+#letter {
+    font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+    font-size:1.2em;
+    margin: 10px auto;
+    position: relative;
+    width: 100%;
+}
+#letter_src {
+    display: none;
+}
