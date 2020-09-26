@@ -1,2 +1,3 @@
 # Old Portfolio
-### This is my first ever portfolio, created with ASP.NET MVC, C#
+
+This is my first ever portfolio, created using ASP.NET MVC, C#
